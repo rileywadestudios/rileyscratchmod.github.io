@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riley Mod</title>
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <script src="https://noahscratch493.github.io/editablescratch/js/gui.js" defer></script>
+    <script>
+        // Function to customize the logo in the navbar
+        function customizeLogo() {
+            const logo = document.getElementById('logo_img');
+            if (logo) {
+                // Placeholder for custom text
+                const customText = 'Riley Mod'; // Custom Logo Text
+
+                // Create an h1 element for custom text
+                const heading = document.createElement('h1');
+                heading.textContent = customText; // Set the custom text
+                heading.style.color = 'white'; // Set text color to white
+                heading.style.margin = '0'; // Remove margin
+
+                // Create a link element for the EditableScratch logo
+                const logoLink = document.createElement('a');
+                logoLink.href = 'https://github.com/Noahscratch493/editablescratch/tree/main'; // Link to GitHub
+                logoLink.target = '_blank'; // Open link in new tab
+
+                // Create an image element for the EditableScratch logo
+                const logoImg = document.createElement('img');
+                logoImg.src = 'https://raw.githubusercontent.com/Noahscratch493/editablescratch/refs/heads/main/static/power-by-logo.png'; // Set the new logo source
+                logoImg.alt = 'EditableScratch Logo'; // Alt text
+                logoImg.style.width = '100px'; // Set logo width (adjust as needed)
+                logoImg.style.height = 'auto'; // Maintain aspect ratio
+                logoImg.style.display = 'block'; // Ensure it is on its own line
+                logoImg.style.margin = '0 auto'; // Center the logo horizontally
+                logoImg.style.marginTop = '5px'; // Add space above the logo
+
+                // Append the logo image to the link
+                logoLink.appendChild(logoImg); 
+
+                // Find the specific class to insert the content
+                const navbarItem = document.querySelector('.menu-bar_menu-bar-item_NKeCD.menu-bar_hoverable_l9SvC.menu-bar_account-nav-menu_c3Wem');
+                if (navbarItem) {
+                    // Clear existing content
+                    navbarItem.innerHTML = ''; // Remove any existing content
+
+                    // Append the elements to the navbar item
+                    navbarItem.appendChild(logoLink); // Add logo link
+                    navbarItem.appendChild(heading); // Add custom heading
+                }
+
+                // Finally, replace the original logo with the custom heading
+                logo.parentNode.replaceChild(heading, logo);
+            }
+        }
+
+        window.onload = function() {
+            customizeLogo(); // Call the function to customize the logo on window load
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
